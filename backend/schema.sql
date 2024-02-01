@@ -5,11 +5,8 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
-
+-- Schema mydb
 -- -----------------------------------------------------
-
-
-
 -- -----------------------------------------------------
 -- Schema events
 -- -----------------------------------------------------
@@ -18,11 +15,6 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- Schema events
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `events` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
-
-
-
-
-
 USE `events` ;
 
 -- -----------------------------------------------------
@@ -38,7 +30,6 @@ CREATE TABLE IF NOT EXISTS `events`.`event_categories` (
   `extra_information` TEXT NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -57,6 +48,23 @@ CREATE TABLE IF NOT EXISTS `events`.`events` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `events`.`eventsdetails`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `events`.`eventsdetails` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `eventName` VARCHAR(255) NOT NULL,
+  `description` TEXT NULL DEFAULT NULL,
+  `date` DATE NULL DEFAULT NULL,
+  `consumption` VARCHAR(50) NULL DEFAULT NULL,
+  `location` VARCHAR(255) NULL DEFAULT NULL,
+  `category` VARCHAR(50) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
