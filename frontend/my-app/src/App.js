@@ -1,6 +1,7 @@
 import React from 'react';
 import EventCategories from './components/eventcategories';
-
+import AddEvent from './components/AddEvent';
+import SuccessEvent from './components/SuccessEvent';
 function App() {
   return (
     <div className="App">
@@ -9,6 +10,8 @@ function App() {
       </header>
       <main>
         <EventCategories />
+        <AddEvent/>
+        <SuccessEvent/>
       </main>
     </div>
   );
