@@ -1,0 +1,226 @@
+/* index.css */
+
+/* Reset styles */
+body, h1, h2, p, ul, li, button {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Global styles */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Styling for the entire home page */
+  .home-page {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+ /* index.css */
+
+/* Navbar styling */
+.navbar {
+    background-color: skyblue;
+    padding: 10px 0;
+  }
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navbar .logo {
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  .navbar .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .navbar .nav-links li:last-child {
+    margin-right: 0;
+  }
+  
+  .navbar .nav-links li button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar .nav-links li button:hover {
+    background-color: #555;
+  }
+  
+  /* Add more styling as needed */
+  
+  /* Styling for the main content */
+  /* index.css */
+
+/* Main content styling */
+/* index.css */
+
+/* Main content styling */
+.main-content {
+    padding: 50px 0;
+  }
+  
+  /* Header section styling */
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .header h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .header p {
+    font-size: 18px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Description section styling */
+  .description-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+  }
+  
+  .description-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .description-section h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .description-section p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  
+  /* Hover effects */
+  .nav-links li button:hover,
+  .explore-btn:hover {
+    color: #ff6600; /* Orange color */
+    transform: scale(1.1);
+  }
+  /* index.css */
+
+/* Styling for the event boxes */
+/* Add these styles to index.css */
+.event-boxes-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .event-box {
+    width: calc(33.33% - 20px);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .event-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-box .event-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .event-box .event-info h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .event-box .event-info p {
+    font-size: 16px;
+    color: #666;
+  }
+  .language-selector {
+    position: relative;
+  }
+  
+  .language-selector select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 10px 30px 10px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .language-selector select::-ms-expand {
+    display: none;
+  }
+  
+  .language-selector:before {
+    content: "\f107"; /* Unicode for down arrow */
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #555;
+    pointer-events: none;
+  }
+  
+  .language-selector select:hover {
+    border-color: #999;
+  }
+  
+  .language-selector select:focus {
+    border-color: #555;
+  }
+  
+  
+  /* Add additional styling as needed */
+.event1{
+    background-image: url("https://cdn.uc.assets.prezly.com/718bed9a-20fd-4db7-ab13-8d0587225d31/-/preview/1200x1200/-/format/auto/");
+}  
+.event2{
+    background-image: url("https://variety.com/wp-content/uploads/2023/05/BUK_6097.jpg?w=1000");
+}  
+.event3{
+    background-image: url("https://media.gettyimages.com/id/487181867/photo/london-england-panellists-javier-navarrete-peter-golub-and-alex-heffes-attend-the-art-of-film.jpg?s=612x612&w=0&k=20&c=9UQO0ANBM01D-vdz3Qltf3CT5uM-fYuPlSG5TgrgTqc=");
+}
