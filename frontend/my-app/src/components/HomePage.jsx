@@ -6,25 +6,32 @@ import LoginPage from "../components/loginpage";
 import Features from "../components/Features"; // Import the Features component
 import Blog from "../components/blog"; // Import the Blog component
 import AboutUs from "../components/aboutus"; // Import the AboutUs component
+import SuccessEvent from '../components/SuccessEvent';
+import AddEvent from '../components/AddEvent';
+
 
 const HomePage = () => {
-  const [showEventCategory, setShowEventCategory] = useState(false); // State to control visibility of EventCategory component
-  const [showPrices, setShowPrices] = useState(false); // State to control visibility of Prices component
-  const [currentPage, setCurrentPage] = useState('home'); // State to track the current page
-  const [selectedLanguage, setSelectedLanguage] = useState('en'); // State to store the selected language
-  const [showBlog, setShowBlog] = useState(false); // State to control visibility of Blog component
-  const [showAboutUs, setShowAboutUs] = useState(false); // State to control visibility of AboutUs component
+  const [showEventCategory, setShowEventCategory] = useState(false);
+  const [showPrices, setShowPrices] = useState(false);
+  const [currentPage, setCurrentPage] = useState('home');
+  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const [showBlog, setShowBlog] = useState(false);
+  const [showAboutUs, setShowAboutUs] = useState(false);
+  const [showSuccessEvent, setShowSuccessEvent] = useState(false); // New state for SuccessEvent
+  const [showAddEvent , setShowAddEvent]=useState (false)
 
   const handleNavigation = (page) => {
-    setCurrentPage(page); // Update the current page based on the button clicked
-    setShowEventCategory(page === 'eventCategories'); // Show EventCategory component if page is 'eventCategories'
-    setShowPrices(false); // Hide Prices component
-    setShowBlog(page === 'blog'); // Show Blog component if page is 'blog'
-    setShowAboutUs(page === 'about'); // Show AboutUs component if page is 'about'
+    setCurrentPage(page);
+    setShowEventCategory(page === 'eventCategories');
+    setShowPrices(false);
+    setShowBlog(page === 'blog');
+    setShowAboutUs(page === 'about');
+    setShowSuccessEvent(page === 'success');
+    setShowAddEvent(page==='addEvent')
   };
 
   const handleLanguageChange = (language) => {
-    setSelectedLanguage(language); // Update the selected language
+    setSelectedLanguage(language);
   };
 
   return (
@@ -42,8 +49,7 @@ const HomePage = () => {
             <li><button onClick={() => handleNavigation('addEvent')}>Add Your Event</button></li>
             <li><button onClick={() => handleNavigation('features')}>Features</button></li>
             <li><button onClick={() => handleNavigation('blog')}>Blog</button></li>
-            {/* Add more navigation links as needed */}
-            <li><button onClick={() => handleNavigation('login')}>Login</button></li> {/* New login button */}
+            <li><button onClick={() => handleNavigation('login')}>Login</button></li>
           </ul>
           {/* Language selector */}
           <div className="language-selector">
@@ -137,6 +143,9 @@ const HomePage = () => {
         {showBlog && <Blog />}
         {/* Render the AboutUs component if current page is 'about' */}
         {showAboutUs && <AboutUs />}
+        {/* Render the SuccessEvent component if current page is 'success' */}
+        {showSuccessEvent && <SuccessEvent />}
+        { showAddEvent &&   <AddEvent/>}
       </div>
     </div>
   );
