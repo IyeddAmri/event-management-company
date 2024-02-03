@@ -45,7 +45,7 @@ function AddEvent({ onEventAdded }) {
 
   return (
     <div>
-      <h2>Add your event</h2>
+      <h2>let's talk about your event !</h2>
       <form onSubmit={submitEvent} className="page">
         <div className="field field_v1">
           <label htmlFor="event-name" className="ha-screen-reader">
