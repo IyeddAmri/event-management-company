@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../App.css';
+import '../App.css'; // Import the external CSS file
 
 const EventCategory = () => {
   const [eventCategories, setEventCategories] = useState([]);
@@ -82,7 +82,9 @@ const EventCategory = () => {
   return (
     <div className="event-category-container">
       <h1>Event Categories</h1>
-      <button onClick={() => setCreateFormVisible(!createFormVisible)}>Toggle Create Form</button>
+      <button className="event-create-button" onClick={() => setCreateFormVisible(!createFormVisible)}>
+        {createFormVisible ? 'Hide Form' : 'Show Form'}
+      </button>
       {createFormVisible && (
         <form onSubmit={handleSubmit} className="event-form">
           <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" required />
