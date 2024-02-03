@@ -1,70 +1,77 @@
-/* EventCategories.css */
-
-/* Container styling */
-.event-categories-container {
+.event-category-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading styling */
-.event-categories-container h2 {
-  font-size: 24px;
+.event-category-container h1 {
+  text-align: center;
+}
+
+.event-category-container button {
+  margin-bottom: 10px;
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.event-form {
   margin-bottom: 20px;
-  color: #333;
 }
 
-/* Category list styling */
-.categories-list {
+.event-form input,
+.event-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.event-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+}
+
+.event-category-list {
   list-style: none;
   padding: 0;
 }
 
-/* Category item styling */
 .category-item {
   background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Buttons inside category item */
-.category-item button {
-  margin-left: 10px;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.category-info {
+  margin-bottom: 10px;
 }
 
-.category-item button:hover {
-  background-color: #f0f0f0;
+.category-info div {
+  margin-bottom: 5px;
 }
 
-/* Form for adding new category */
-.add-category-form {
-  margin-top: 20px;
-}
-
-.add-category-form input[type="text"] {
-  width: 200px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.add-category-form button {
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
+.category-actions button {
+  margin-right: 10px;
+  padding: 8px 20px;
+  background-color: #dc3545;
   color: #fff;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.add-category-form button:hover {
-  background-color: #0056b3;
+.category-actions button:hover {
+  background-color: #c82333;
 }
