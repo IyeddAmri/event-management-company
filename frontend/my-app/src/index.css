@@ -1,0 +1,51 @@
+/* EventDetailsToggle.css */
+
+div {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Smooth transition effect for showing/hiding details */
+  .transition-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
+  .transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .transition-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .transition-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 300ms, transform 300ms;
+  }
+body{
+    background-image: url("https://i.pinimg.com/564x/ad/d6/b8/add6b8ece0af64127ad94db12a032b11.jpg");
+}  

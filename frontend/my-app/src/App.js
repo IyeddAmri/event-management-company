@@ -1,3 +1,5 @@
+import logo from './logo.svg';
+import './App.css';
 import React from 'react';
 import EventCategories from './components/eventcategories';
 
@@ -5,6 +7,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+   
+       
+        
         <h1>Event Management System</h1>
       </header>
       <main>
@@ -13,5 +18,4 @@ function App() {
     </div>
   );
 }
-
-export default App;
+export default App
