@@ -27,7 +27,7 @@ const Blog = () => {
           <div className="blog-post-details">
             <h3 className="blog-post-title">The Importance of Networking in Event Management</h3>
             <p className="blog-post-date">Published on January 15, 2024</p>
-            <p className="blog-post-excerpt">Nulla facilisi. Duis eu erat finibus, scelerisque nisi ac, auctor libero. Cras nec nunc non lorem placerat gravida. In porttitor...</p>
+            <p className="blog-post-excerpt">Networking events appeal to and attract all kinds of attendees. And when you're regularly getting into these networking circles, you can find yourself uncovering new event clients. Ask for referrals and generate new leads by leveraging your network.</p>
             <a href="#" className="read-more">Read more</a>
           </div>
         </div>

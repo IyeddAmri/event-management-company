@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../App.css';
+import '../index5.css'; // Import CSS file for component styling
 
 function AddEvent({ onEventAdded }) {
   const [eventName, setEventName] = useState('');
@@ -44,86 +44,71 @@ function AddEvent({ onEventAdded }) {
   };
 
   return (
-    <div>
-      <h2>Add your event</h2>
-      <form onSubmit={submitEvent} className="page">
-        <div className="field field_v1">
-          <label htmlFor="event-name" className="ha-screen-reader">
-            Event Name
-          </label>
+    <div className="add-event-container">
+      <h2 className="add-event-title">Let's talk about your event!</h2>
+      <form onSubmit={submitEvent} className="add-event-form">
+        <div className="add-event-field">
+          <label htmlFor="event-name" className="add-event-label">Event Name:</label>
           <input
             id="event-name"
-            className="field__input"
+            className="add-event-input"
             placeholder="Enter Event Name"
             type="text"
             value={eventName}
             onChange={(e) => setEventName(e.target.value)}
             required
           />
-         
         </div>
-        <div className="field field_v2">
-          <label htmlFor="event-description" className="ha-screen-reader">
-            Event Description
-          </label>
+        <div className="add-event-field">
+          <label htmlFor="event-description" className="add-event-label">Event Description:</label>
           <input
             id="event-description"
-            className="field__input"
+            className="add-event-input"
             placeholder="Enter Event Description"
             type="text"
             value={eventDescription}
             onChange={(e) => setEventDescription(e.target.value)}
             required
           />
-        
         </div>
-        <div className="field field_v3">
-          <label htmlFor="event-location" className="ha-screen-reader">
-            Event Location
-          </label>
+        <div className="add-event-field">
+          <label htmlFor="event-location" className="add-event-label">Event Location:</label>
           <input
             id="event-location"
-            className="field__input"
+            className="add-event-input"
             placeholder="Enter Event Location"
             type="text"
             value={eventLocation}
             onChange={(e) => setEventLocation(e.target.value)}
             required
           />
-         
         </div>
-        <div className="field field_v3">
-          <label htmlFor="event-startTime" className="ha-screen-reader">
-            Start Time
-          </label>
+        <div className="add-event-field">
+          <label htmlFor="event-startTime" className="add-event-label">Start Time:</label>
           <input
             id="event-startTime"
-            className="field__input"
+            className="add-event-input"
             placeholder="Enter Start Time"
             type="text"
             value={eventStartTime}
             onChange={(e) => setEventStartTime(e.target.value)}
             required
           />
-         
         </div>
-        <div className="field field_v3">
-          <label htmlFor="event-endTime" className="ha-screen-reader">
-            End Time
-          </label>
+        <div className="add-event-field">
+          <label htmlFor="event-endTime" className="add-event-label">End Time:</label>
           <input
             id="event-endTime"
-            className="field__input"
+            className="add-event-input"
             placeholder="Enter End Time"
             type="text"
             value={eventEndTime}
             onChange={(e) => setEventEndTime(e.target.value)}
             required
           />
-        
         </div>
 
-        <button type="submit">Add your event</button>
+        <button type="submit" className="add-event-button">Add Your Event</button>
       </form>
     </div>
   );

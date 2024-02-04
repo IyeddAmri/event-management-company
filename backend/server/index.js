@@ -1,9 +1,13 @@
 // server.js (or your server file)
-
+const cors = require ('cors')
 const express = require('express');
 const bodyParser = require('body-parser');
 // const emailjs = require('emailjs-com');
-const cors =require("cors")
+
+
+
+
+
 const app = express();
 
 app.use(bodyParser.json());

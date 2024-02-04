@@ -106,6 +106,7 @@ body, h1, h2, p, ul, li, button {
   .description-section {
     background-color: #f9f9f9;
     padding: 50px 0;
+    text-align: center; /* Center align the content */
   }
   
   .description-section .container {
@@ -114,16 +115,26 @@ body, h1, h2, p, ul, li, button {
   }
   
   .description-section h2 {
-    font-size: 32px;
+    font-size: 2rem; /* Using rem units for better scalability */
     color: #333;
-    margin-bottom: 30px;
-    text-align: center;
+    margin-bottom: 1.5rem; /* Adjusted for better spacing */
   }
   
   .description-section p {
-    font-size: 18px;
+    font-size: 1.125rem; /* Adjusted font size for better readability */
     color: #666;
-    line-height: 1.6;
+    line-height: 1.8; /* Slightly increased line height for better legibility */
+    margin: 0 auto 2rem; /* Added margin for better spacing */
+    max-width: 600px; /* Limiting the width for better readability */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+  }
+  
+  .description-section p:hover {
+    color: #444; /* Darker color on hover */
+  }
+  
+  .description-section:hover {
+    background-color: #ebebeb; /* Lighter background color on hover */
   }
   
   
