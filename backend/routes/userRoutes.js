@@ -1,6 +1,7 @@
-// routes/userRoutes.js
+// userRoutes.js
 const express = require('express');
 const userController = require('../controllers/userController');
+const { authenticateJWT } = require('../controllers/userController'); // Import authenticateJWT
 
 const router = express.Router();
 
@@ -10,13 +11,13 @@ router.post('/register', userController.registerUser);
 // Log in user
 router.post('/login', userController.loginUser);
 
-// Get user profile
-router.get('/profile', userController.getUserProfile);
+// Get user profile with JWT authentication
+router.get('/profile', authenticateJWT, userController.getUserProfile);
 
-// Update user profile
-router.put('/profile', userController.updateUserProfile);
+// Update user profile with JWT authentication
+router.put('/profile', authenticateJWT, userController.updateUserProfile);
 
-// Delete user account
-router.delete('/profile', userController.deleteUser);
+// Delete user account with JWT authentication
+router.delete('/profile', authenticateJWT, userController.deleteUser);
 
 module.exports = router;
