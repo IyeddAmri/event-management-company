@@ -2,6 +2,12 @@ const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const emailjs = require('emailjs-com');
+// const emailjs = require('emailjs-com');
+
+
+
+
+
 const app = express();
 
 const corsOptions = {
@@ -16,16 +22,15 @@ app.use(cors(corsOptions));
 const eventRoutes = require('../routes/eventroute');
 const eventCategoryRoutes = require('../routes/eventCategoryRoutes');
 const successEvent = require('../routes/successEvent');
-const routeEvent = require('../routes/eventDetails');
-const userRoutes = require('../routes/userRoutes'); // Include user routes
-
+const router = require('../routes/eventDetails');
+const  userRoutes = require('../routes/userRoutes');
 app.use(express.json());
 
 app.use('/api', eventRoutes);
 app.use('/api', eventCategoryRoutes);
-app.use('/api', routeEvent);
+app.use('/api', router);
 app.use('/api', successEvent);
-app.use('/api', userRoutes);
+ app.use('/api', userRoutes); // Use user routes
 
 // New route for sending welcome emails
 app.post('/api/send-welcome-email', (req, res) => {
