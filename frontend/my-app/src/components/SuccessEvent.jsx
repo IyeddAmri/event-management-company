@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../index4.css'; // Import CSS file for component styling
 
 function SuccessEvent() {
   const [data, setData] = useState([]);
@@ -18,15 +19,18 @@ function SuccessEvent() {
   }, []);
 
   return (
-    <div>
-      <div className='success-event'>
+    <div className="success-event-container">
+      <h1 className="success-event-title">Success Events</h1>
+      <div className="success-event-grid">
         {data.map((element) => (
-          <div key={element.id}>
-            <img src={element.image} alt={element.name} />
-            <h1>{element.name}</h1>
-            <h2>{element.country}</h2>
-            <h3>{element.date}</h3>
-            <h4>{element.concept}</h4>
+          <div key={element.id} className="success-event-card">
+            <img src={element.image} alt={element.name} className="success-event-image" />
+            <div className="success-event-details">
+              <h2 className="success-event-name">{element.name}</h2>
+              <p className="success-event-country">{element.country}</p>
+              <p className="success-event-date">{element.date}</p>
+              <p className="success-event-concept">{element.concept}</p>
+            </div>
           </div>
         ))}
       </div>
