@@ -17,7 +17,8 @@ app.use(bodyParser.json());
 const eventRoutes = require('../routes/eventroute');
 const eventCategoryRoutes = require('../routes/eventCategoryRoutes');
 const successEvent = require('../routes/successEvent');
-const routeEvent = require('../routes/eventDetails');
+const router = require('../routes/eventDetails');
+// const { default: EventDetails } = require('../../frontend/my-app/src/components/eventdetails');
 // const userRoutes = require('../routes/userRoutes'); // Include user routes
 
 app.use(express.json());
@@ -27,8 +28,9 @@ app.use(cors());
 // Use your existing routes
 app.use('/api', eventRoutes);
 app.use('/api', eventCategoryRoutes);
-app.use('/api', routeEvent);
+app.use('/api', router);
 app.use('/api', successEvent);
+
 // app.use('/api', userRoutes); // Use user routes
 
 // New route for sending welcome emails
