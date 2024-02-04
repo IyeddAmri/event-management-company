@@ -1,3 +1,5 @@
+import logo from './logo.svg';
+import './App.css';
 import React from 'react';
 // import EventCategories from './components/eventcategories';
 // import AddEvent from './components/AddEvent';
@@ -8,7 +10,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Event Management System</h1>
+   
+       
+        
+        <h1 id='namepage'>E.M.S</h1>
       </header>
       <main>
         <HomePage /> {/* Include the HomePage component */}
@@ -19,5 +24,4 @@ function App() {
     </div>
   );
 }
-
-export default App;
+export default App

@@ -48,6 +48,24 @@ CREATE TABLE IF NOT EXISTS `events`.`events` (
   `end_time` TIME NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `events`.`eventsdetails`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `events`.`eventsdetails` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `eventName` VARCHAR(255) NOT NULL,
+  `description` TEXT NULL DEFAULT NULL,
+  `date` DATE NULL DEFAULT NULL,
+  `consumption` VARCHAR(50) NULL DEFAULT NULL,
+  `location` VARCHAR(255) NULL DEFAULT NULL,
+  `category` VARCHAR(50) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -64,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `events`.`successstories` (
   `image` VARCHAR(1000) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 10
+AUTO_INCREMENT = 12
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
