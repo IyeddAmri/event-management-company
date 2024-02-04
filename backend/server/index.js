@@ -1,9 +1,8 @@
-// server.js (or your server file)
-const cors = require ('cors')
+const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const emailjs = require('emailjs-com');
-
+// const emailjs = require('emailjs-com');
 
 
 
@@ -11,7 +10,13 @@ const emailjs = require('emailjs-com');
 
 const app = express();
 
+const corsOptions = {
+  origin: 'http://localhost:3000/', // Replace with your frontend URL
+  credentials: true,
+};
+
 app.use(bodyParser.json());
+app.use(cors(corsOptions));
 
 // Your existing routes
 const eventRoutes = require('../routes/eventroute');
@@ -21,14 +26,11 @@ const router = require('../routes/eventDetails');
 const  userRoutes = require('../routes/userRoutes');
 app.use(express.json());
 
-app.use(cors());
-
-// Use your existing routes
 app.use('/api', eventRoutes);
 app.use('/api', eventCategoryRoutes);
 app.use('/api', router);
 app.use('/api', successEvent);
-app.use('/api', userRoutes); // Use user routes
+ app.use('/api', userRoutes); // Use user routes
 
 // New route for sending welcome emails
 app.post('/api/send-welcome-email', (req, res) => {

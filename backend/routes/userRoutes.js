@@ -16,17 +16,17 @@ router.post('/login', (req, res) => {
 });
 
 // Get user profile with JWT authentication
-router.post('/profile', authenticateJWT, (req, res) => {
+router.get('/profile', authenticateJWT, (req, res) => {
   userController.getUserProfile(req, res);
 });
 
 // Update user profile with JWT authentication
-router.post('/profile/update', authenticateJWT, (req, res) => {
+router.put('/profile/update', authenticateJWT, (req, res) => {
   userController.updateUserProfile(req, res);
 });
 
 // Delete user account with JWT authentication
-router.post('/profile/delete', authenticateJWT, (req, res) => {
+router.delete('/profile/delete', authenticateJWT, (req, res) => {
   userController.deleteUser(req, res);
 });
 
