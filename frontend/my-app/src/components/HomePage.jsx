@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../index.css'; // Import the external CSS file
+import EventDetails from '../components/EventBoxDetails'; // Import the EventDetails component
 import EventCategory from '../components/eventcategories'; // Import the EventCategory component
 import Prices from '../components/Prices'; // Import the Prices component
 import LoginPage from "../components/loginpage";
@@ -9,7 +10,6 @@ import AboutUs from "../components/aboutus"; // Import the AboutUs component
 import SuccessEvent from '../components/SuccessEvent';
 import AddEvent from '../components/AddEvent';
 
-
 const HomePage = () => {
   const [showEventCategory, setShowEventCategory] = useState(false);
   const [showPrices, setShowPrices] = useState(false);
@@ -18,7 +18,8 @@ const HomePage = () => {
   const [showBlog, setShowBlog] = useState(false);
   const [showAboutUs, setShowAboutUs] = useState(false);
   const [showSuccessEvent, setShowSuccessEvent] = useState(false); // New state for SuccessEvent
-  const [showAddEvent , setShowAddEvent]=useState (false)
+  const [showAddEvent , setShowAddEvent]=useState (false);
+  const [selectedEvent, setSelectedEvent] = useState(null); // State to store selected event details
 
   const handleNavigation = (page) => {
     setCurrentPage(page);
@@ -27,11 +28,26 @@ const HomePage = () => {
     setShowBlog(page === 'blog');
     setShowAboutUs(page === 'about');
     setShowSuccessEvent(page === 'success');
-    setShowAddEvent(page==='addEvent')
+    setShowAddEvent(page==='addEvent');
+    setSelectedEvent(null); // Reset selected event when navigating to a new page
   };
 
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
+  };
+
+  const handleShowDetails = (event) => {
+    setSelectedEvent(event);
+    // Change view to event details page
+    changeView('eventDetails');
+  };
+
+  const handleCloseDetails = () => {
+    setSelectedEvent(null);
+  };
+
+  const changeView = (page) => {
+    setCurrentPage(page);
   };
 
   return (
@@ -101,6 +117,15 @@ const HomePage = () => {
                   <p>{selectedLanguage === 'en' ? 'Tomorrowland is a large-scale annual electronic dance music festival held in Boom, Belgium.' : 
                      selectedLanguage === 'fr' ? 'Tomorrowland est un festival de musique électronique annuel de grande envergure qui se tient à Boom, en Belgique.' : 
                      'تومورولاند هو مهرجان موسيقى الرقص الإلكترونية السنوي الكبير الذي يُقام في بوم ، بلجيكا.'}</p>
+                  {/* Show Details button */}
+                  <button onClick={() => handleShowDetails({
+                    eventName: selectedLanguage === 'en' ? 'Tomorrowland Belgium' : 
+                               selectedLanguage === 'fr' ? 'Tomorrowland Belgique' : 
+                               'تومورولاند بلجيكا',
+                    description: selectedLanguage === 'en' ? 'Tomorrowland is a large-scale annual electronic dance music festival held in Boom, Belgium.' : 
+                                 selectedLanguage === 'fr' ? 'Tomorrowland est un festival de musique électronique annuel de grande envergure qui se tient à Boom, en Belgique.' : 
+                                 'تومورولاند هو مهرجان موسيقى الرقص الإلكترونية السنوي الكبير الذي يُقام في بوم ، بلجيكا.'
+                  })}>Show Details</button>
                 </div>
               </div>
               {/* Event Box 2 */}
@@ -113,6 +138,15 @@ const HomePage = () => {
                   <p>{selectedLanguage === 'en' ? 'The Cannes Film Festival, until 2002 called the International Film Festival and known in English as the Cannes Film Festival, is an annual film festival held in Cannes, France.' : 
                      selectedLanguage === 'fr' ? 'Le Festival de Cannes, jusqu\'en 2002 appelé Festival international du film et connu en anglais sous le nom de Festival de Cannes, est un festival de cinéma annuel qui se tient à Cannes, en France.' : 
                      'مهرجان كان للأفلام ، حتى عام 2002 يُطلق عليه اسم مهرجان الفيلم الدولي ويعرف باللغة الإنجليزية باسم مهرجان كان السينمائي ، هو مهرجان سينمائي سنوي يُعقد في مدينة كان بفرنسا.'}</p>
+                  {/* Show Details button */}
+                  <button onClick={() => handleShowDetails({
+                    eventName: selectedLanguage === 'en' ? 'Cannes Film Festival' : 
+                               selectedLanguage === 'fr' ? 'Festival de Cannes' : 
+                               'مهرجان كان السينمائي',
+                    description: selectedLanguage === 'en' ? 'The Cannes Film Festival, until 2002 called the International Film Festival and known in English as the Cannes Film Festival, is an annual film festival held in Cannes, France.' : 
+                                 selectedLanguage === 'fr' ? 'Le Festival de Cannes, jusqu\'en 2002 appelé Festival international du film et connu en anglais sous le nom de Festival de Cannes, est un festival de cinéma annuel qui se tient à Cannes, en France.' : 
+                                 'مهرجان كان للأفلام ، حتى عام 2002 يُطلق عليه اسم مهرجان الفيلم الدولي ويعرف باللغة الإنجليزية باسم مهرجان كان السينمائي ، هو مهرجان سينمائي سنوي يُعقد في مدينة كان بفرنسا.'
+                  })}>Show Details</button>
                 </div>
               </div>
               {/* Event Box 3 */}
@@ -125,6 +159,15 @@ const HomePage = () => {
                   <p>{selectedLanguage === 'en' ? 'The Sundance Film Festival is an annual film festival organized by the Sundance Institute. It takes place each January in Park City, Utah, Salt Lake City, and at the Sundance Resort, and is the largest independent film festival in the United States.' : 
                      selectedLanguage === 'fr' ? 'Le Festival du film de Sundance est un festival de cinéma annuel organisé par l\'Institut Sundance. Il se déroule chaque janvier à Park City, Utah, Salt Lake City et au Sundance Resort, et est le plus grand festival de cinéma indépendant aux États-Unis.' : 
                      'مهرجان ساندانس السينمائي هو مهرجان سينمائي سنوي يُنظمه معهد ساندانس. يقام كل شهر يناير في مدينة بارك سيتي بولاية يوتاه ، وسولت ليك سيتي ، وفي منتجع ساندانس ، وهو أكبر مهرجان سينمائي مستقل في الولايات المتحدة.'}</p>
+                  {/* Show Details button */}
+                  <button onClick={() => handleShowDetails({
+                    eventName: selectedLanguage === 'en' ? 'Sundance Film Festival' : 
+                               selectedLanguage === 'fr' ? 'Festival du film de Sundance' : 
+                               'مهرجان ساندانس السينمائي',
+                    description: selectedLanguage === 'en' ? 'The Sundance Film Festival is an annual film festival organized by the Sundance Institute. It takes place each January in Park City, Utah, Salt Lake City, and at the Sundance Resort, and is the largest independent film festival in the United States.' : 
+                                 selectedLanguage === 'fr' ? 'Le Festival du film de Sundance est un festival de cinéma annuel organisé par l\'Institut Sundance. Il se déroule chaque janvier à Park City, Utah, Salt Lake City et au Sundance Resort, et est le plus grand festival de cinéma indépendant aux États-Unis.' : 
+                                 'مهرجان ساندانس السينمائي هو مهرجان سينمائي سنوي يُنظمه معهد ساندانس. يقام كل شهر يناير في مدينة بارك سيتي بولاية يوتاه ، وسولت ليك سيتي ، وفي منتجع ساندانس ، وهو أكبر مهرجان سينمائي مستقل في الولايات المتحدة.'
+                  })}>Show Details</button>
                 </div>
               </div>
               {/* Add more event boxes as needed */}
@@ -146,6 +189,8 @@ const HomePage = () => {
         {/* Render the SuccessEvent component if current page is 'success' */}
         {showSuccessEvent && <SuccessEvent />}
         { showAddEvent &&   <AddEvent/>}
+        {/* Render the EventDetails component if an event is selected */}
+        {currentPage === 'eventDetails' && selectedEvent && <EventDetails eventDetails={selectedEvent} onClose={handleCloseDetails} />}
       </div>
     </div>
   );
