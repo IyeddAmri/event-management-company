@@ -1,23 +1,33 @@
 // userRoutes.js
 const express = require('express');
 const userController = require('../controllers/userController');
-const { authenticateJWT } = require('../controllers/userController'); // Import authenticateJWT
+const { authenticateJWT } = require('../controllers/userController');
 
 const router = express.Router();
 
 // Register a new user
-router.post('/register', userController.registerUser);
+router.post('/register', (req, res) => {
+  userController.registerUser(req, res);
+});
 
 // Log in user
-router.post('/login', userController.loginUser);
+router.post('/login', (req, res) => {
+  userController.loginUser(req, res);
+});
 
 // Get user profile with JWT authentication
-router.get('/profile', authenticateJWT, userController.getUserProfile);
+router.post('/profile', authenticateJWT, (req, res) => {
+  userController.getUserProfile(req, res);
+});
 
 // Update user profile with JWT authentication
-router.put('/profile', authenticateJWT, userController.updateUserProfile);
+router.post('/profile/update', authenticateJWT, (req, res) => {
+  userController.updateUserProfile(req, res);
+});
 
 // Delete user account with JWT authentication
-router.delete('/profile', authenticateJWT, userController.deleteUser);
+router.post('/profile/delete', authenticateJWT, (req, res) => {
+  userController.deleteUser(req, res);
+});
 
 module.exports = router;
