@@ -3,7 +3,6 @@ const cors = require ('cors')
 const express = require('express');
 const bodyParser = require('body-parser');
 const emailjs = require('emailjs-com');
-const cors = require('cors');
 // const emailjs = require('emailjs-com');
 
 const app = express();
