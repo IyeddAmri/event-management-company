@@ -1,29 +1,5 @@
-/* EventDetailsToggle.css */
 
-div {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
+
   /* Smooth transition effect for showing/hiding details */
   .transition-enter {
     opacity: 0;
@@ -46,6 +22,386 @@ div {
     transform: translateY(-20px);
     transition: opacity 300ms, transform 300ms;
   }
-body{
-    background-image: url("https://i.pinimg.com/564x/ad/d6/b8/add6b8ece0af64127ad94db12a032b11.jpg");
+
+
+/* index.css */
+
+/* Reset styles */
+body, h1, h2, p, ul, li, button {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Global styles */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Styling for the entire home page */
+  .home-page {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+ /* index.css */
+
+/* Navbar styling */
+.navbar {
+    background-color: skyblue;
+    padding: 10px 0;
+  }
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navbar .logo {
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  .navbar .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .navbar .nav-links li:last-child {
+    margin-right: 0;
+  }
+  
+  .navbar .nav-links li button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar .nav-links li button:hover {
+    background-color: #555;
+  }
+  
+  /* Add more styling as needed */
+  
+  /* Styling for the main content */
+  /* index.css */
+
+/* Main content styling */
+/* index.css */
+
+/* Main content styling */
+.main-content {
+    padding: 50px 0;
+  }
+  
+  /* Header section styling */
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .header h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .header p {
+    font-size: 18px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Description section styling */
+  .description-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+  }
+  
+  .description-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .description-section h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .description-section p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  
+  /* Hover effects */
+  .nav-links li button:hover,
+  .explore-btn:hover {
+    color: #ff6600; /* Orange color */
+    transform: scale(1.1);
+  }
+  /* index.css */
+
+/* Styling for the event boxes */
+/* Add these styles to index.css */
+.event-boxes-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .event-box {
+    width: calc(33.33% - 20px);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .event-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-box .event-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .event-box .event-info h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .event-box .event-info p {
+    font-size: 16px;
+    color: #666;
+  }
+  .language-selector {
+    position: relative;
+  }
+  
+  .language-selector select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 10px 30px 10px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .language-selector select::-ms-expand {
+    display: none;
+  }
+  
+  .language-selector:before {
+    content: "\f107"; /* Unicode for down arrow */
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #555;
+    pointer-events: none;
+  }
+  
+  .language-selector select:hover {
+    border-color: #999;
+  }
+  
+  .language-selector select:focus {
+    border-color: #555;
+  }
+  
+  
+  /* Add additional styling as needed */
+.event1{
+    background-image: url("https://cdn.uc.assets.prezly.com/718bed9a-20fd-4db7-ab13-8d0587225d31/-/preview/1200x1200/-/format/auto/");
 }  
+.event2{
+    background-image: url("https://variety.com/wp-content/uploads/2023/05/BUK_6097.jpg?w=1000");
+}  
+.event3{
+    background-image: url("https://media.gettyimages.com/id/487181867/photo/london-england-panellists-javier-navarrete-peter-golub-and-alex-heffes-attend-the-art-of-film.jpg?s=612x612&w=0&k=20&c=9UQO0ANBM01D-vdz3Qltf3CT5uM-fYuPlSG5TgrgTqc=");
+}
+
+#namepage{
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #4CAF50, #2196F3);
+  -webkit-background-clip: text;
+  color: transparent;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+#namepage:hover{
+  transform: scale(1.05);
+}
+.event-box-details {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.event-box-details h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.event-box-details p {
+  margin: 8px 0;
+}
+.detailed-view {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  max-width: 500px;
+  width: 100%;
+}
+
+.detailed-view img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 10px;
+}
+
+.detailed-view .product-list-item-title,
+.detailed-view .product-list-item-description,
+.detailed-view .product-list-item-category {
+  margin: 8px;
+}
+
+.detailed-view .product-list-item-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.detailed-view .product-list-item-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.detailed-view button {
+  background-color: #000000;
+  color: #fff;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+}
+
+.detailed-view button:hover {
+  background-color: #4d403f;
+}
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.event-details {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-top: 20px;
+  width: 300px; /* Adjust the width as needed */
+  text-align: left;
+  margin-right: 20px; /* Adjust the margin as needed */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.event-details:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.event-details h3 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.event-details p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.event-details button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.event-details button:hover {
+  background-color: #45a049;
+}
+.event-info button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.event-info button:hover {
+  background-color: #2980b9;
+}
