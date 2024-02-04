@@ -28,30 +28,30 @@ app.use('/api', successEvent);
 // app.use('/api', userRoutes); // Use user routes
 
 // New route for sending welcome emails
-// app.post('/api/send-welcome-email', (req, res) => {
-//   const { to_email, subject, message } = req.body;
+app.post('/api/send-welcome-email', (req, res) => {
+  const { to_email, subject, message } = req.body;
 
-//   const templateParams = {
-//     to_email,
-//     subject,
-//     message,
-//   };
+  const templateParams = {
+    to_email,
+    subject,
+    message,
+  };
 
-//   emailjs.send(
-//     'your-emailjs-service-id',
-//     'your-emailjs-template-id',
-//     templateParams,
-//     'your-emailjs-user-id'
-//   )
-//     .then((response) => {
-//       console.log('Welcome email sent successfully:', response);
-//       res.status(200).json({ success: true, message: 'Welcome email sent successfully' });
-//     })
-//     .catch((error) => {
-//       console.error('Error sending welcome email:', error);
-//       res.status(500).json({ success: false, message: 'Failed to send welcome email' });
-//     });
-// });
+  emailjs.send(
+    'your-emailjs-service-id',
+    'your-emailjs-template-id',
+    templateParams,
+    'your-emailjs-user-id'
+  )
+    .then((response) => {
+      console.log('Welcome email sent successfully:', response);
+      res.status(200).json({ success: true, message: 'Welcome email sent successfully' });
+    })
+    .catch((error) => {
+      console.error('Error sending welcome email:', error);
+      res.status(500).json({ success: false, message: 'Failed to send welcome email' });
+    });
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
