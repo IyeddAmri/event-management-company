@@ -1,6 +1,5 @@
-// EventBoxDetails.js
 import React, { useState } from 'react';
-import '../styles/eventBoxDetails.css'; // Import the external CSS file for this component
+import '../box.css'; // Import the external CSS file for this component
 
 const EventBoxDetails = () => {
   const [showDetails, setShowDetails] = useState(false);
@@ -14,9 +13,11 @@ const EventBoxDetails = () => {
       <div className={`event-box ${showDetails ? 'expanded' : ''}`}>
         <div className="event-image"></div>
         <div className="event-info">
-          <h3>Event Name</h3>
-          <p>Event description goes here.</p>
-          <button onClick={toggleDetails}>{showDetails ? 'Hide Details' : 'Show Details'}</button>
+          <h3 className="event-name">Event Name</h3>
+          <p className="event-description">Event description goes here.</p>
+          <button className="toggle-button" onClick={toggleDetails}>
+            {showDetails ? 'Hide Details' : 'Show Details'}
+          </button>
           {showDetails && (
             <div className="event-details">
               <p><strong>Description:</strong> Event description goes here.</p>
