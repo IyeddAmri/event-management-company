@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 // Allow requests from your frontend origin
 app.use(cors({ origin: 'http://localhost:3004', credentials: true }));
-
+app.use (cors())
 // Your existing routes
 const eventRoutes = require('../routes/eventroute');
 const eventCategoryRoutes = require('../routes/eventCategoryRoutes');

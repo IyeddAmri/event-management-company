@@ -26,9 +26,9 @@ function SuccessEvent() {
           <div key={element.id} className="success-event-card">
             <img src={element.image} alt={element.name} className="success-event-image" />
             <div className="success-event-details">
-              <h2 className="success-event-name">{element.name}</h2>
-              <p className="success-event-country">{element.country}</p>
-              <p className="success-event-date">{element.date}</p>
+              <h1 className="success-event-name">{element.eventName}</h1>
+              <h3 className="success-event-country">{element.country}</h3>
+              <h4 className="success-event-date">{element.date}</h4>
               <p className="success-event-concept">{element.concept}</p>
             </div>
           </div>
