@@ -1,15 +1,28 @@
-// controllers/userController.js
+// userController.js
 const User = require('../models/userModel');
 const jwt = require('jsonwebtoken');
-const expressJwt = require('express-jwt');
-
-// Middleware to check for a valid token
-const authenticateJWT = expressJwt({ secret: 'yourSecretKey', algorithms: ['HS256'] });
 
 // Function to generate a JWT token
 const generateToken = (userId) => {
   const token = jwt.sign({ userId }, 'yourSecretKey', { expiresIn: '1h' });
   return token;
+};
+
+// Middleware to check for a valid token
+const authenticateJWT = (req, res, next) => {
+  const token = req.header('Authorization');
+
+  if (!token) {
+    return res.status(401).json({ message: 'Authorization token is missing' });
+  }
+
+  try {
+    const decoded = jwt.verify(token, 'yourSecretKey');
+    req.user = decoded;
+    next();
+  } catch (error) {
+    return res.status(401).json({ message: 'Invalid token' });
+  }
 };
 
 // Register a new user
@@ -45,7 +58,7 @@ exports.loginUser = async (req, res) => {
 };
 
 // Get user profile with JWT authentication
-exports.getUserProfile = authenticateJWT, async (req, res) => {
+exports.getUserProfile = async (req, res) => {
   try {
     const user = await User.getById(req.user.userId);
     if (!user) {
@@ -58,7 +71,7 @@ exports.getUserProfile = authenticateJWT, async (req, res) => {
 };
 
 // Update user profile with JWT authentication
-exports.updateUserProfile = authenticateJWT, async (req, res) => {
+exports.updateUserProfile = async (req, res) => {
   try {
     const user = await User.update(req.user.userId, req.body);
     res.status(200).json(user);
@@ -68,7 +81,7 @@ exports.updateUserProfile = authenticateJWT, async (req, res) => {
 };
 
 // Delete user account with JWT authentication
-exports.deleteUser = authenticateJWT, async (req, res) => {
+exports.deleteUser = async (req, res) => {
   try {
     await User.delete(req.user.userId);
     res.status(204).end();
@@ -76,3 +89,5 @@ exports.deleteUser = authenticateJWT, async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+module.exports = { authenticateJWT }; // Export the authenticateJWT middleware
